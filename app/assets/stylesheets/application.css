@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+.mar_b_10 {
+  margin-bottom: 10px;
+}
+.font-red {
+  color: red;
+}
+.font-gray {
+  color: #808080;
+}
+.font-bold {
+  font-weight: bold;
+}
+.font-red ul {
+  list-style-type: none;
+}

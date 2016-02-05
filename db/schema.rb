@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160205023547) do
+ActiveRecord::Schema.define(version: 20160205061858) do
+
+  create_table "favorites", id: false, force: :cascade do |t|
+    t.integer  "id"
+    t.integer  "tweet_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "favorites", ["tweet_id", "user_id"], name: "TWEET_ID_USER_ID_UNIQUE", unique: true
 
   create_table "tweets", force: :cascade do |t|
     t.integer  "user_id",        null: false
@@ -25,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160205023547) do
     t.string   "email",                  default: "", null: false
     t.string   "name"
     t.string   "image"
+    t.text     "profile"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
