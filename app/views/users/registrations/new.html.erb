@@ -1,50 +1,51 @@
-<div class="container">
-  <h2  class="text-center">新規登録</h2>
+<div class="row">
+  <div class="col-sm-12">
+    <h2  class="text-center mar_b_20">新規登録</h2>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
-    <div class="form-group">
-      <%= f.label :name ,class: "control-label col-sm-3" %>
-      <div class="col-sm-9 mar_b_10">
-        <%= f.text_field :name, autofocus: true, class: "form-control" %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+      <div class="form-group">
+        <%= f.label :name ,class: "control-label col-sm-3" %>
+        <div class="col-sm-9 mar_b_10">
+          <%= f.text_field :name, autofocus: true, class: "form-control" %>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <%= f.label :email ,class: "control-label col-sm-3" %>
-      <div class="col-sm-9 mar_b_10">
-        <%= f.text_field :email, class: "form-control" %>
+      <div class="form-group">
+        <%= f.label :email ,class: "control-label col-sm-3" %>
+        <div class="col-sm-9 mar_b_10">
+          <%= f.text_field :email, class: "form-control" %>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <%= f.label :password ,class: "control-label col-sm-3" %>
-      <div class="col-sm-9 mar_b_10">
-        <%= f.password_field :password, class: "form-control" %>
+      <div class="form-group">
+        <%= f.label :password ,class: "control-label col-sm-3" %>
+        <div class="col-sm-9 mar_b_10">
+          <%= f.password_field :password, class: "form-control" %>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <%= f.label :password_confirmation ,class: "control-label col-sm-3" %>
-      <div class="col-sm-9 mar_b_10">
-        <%= f.password_field :password_confirmation, class: "form-control" %>
+      <div class="form-group">
+        <%= f.label :password_confirmation ,class: "control-label col-sm-3" %>
+        <div class="col-sm-9 mar_b_10">
+          <%= f.password_field :password_confirmation, class: "form-control" %>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <%= f.label :image ,class: "control-label col-sm-3" %>
-      <div class="col-sm-9 mar_b_10">
-        <%= f.text_field :profile, class: "form-control" %>
+      <div class="form-group">
+        <%= f.label :image ,class: "control-label col-sm-3" %>
+        <div class="col-sm-9 mar_b_10">
+          <%= f.text_field :profile, class: "form-control" %>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <%= f.label :profile ,class: "control-label col-sm-3" %>
-      <div class="col-sm-9 mar_b_10">
-        <%= f.text_area :profile, class: "form-control" %>
+      <div class="form-group">
+        <%= f.label :profile ,class: "control-label col-sm-3" %>
+        <div class="col-sm-9 mar_b_10">
+          <%= f.text_area :profile, class: "form-control" %>
+        </div>
       </div>
-    </div>
 
-    <div class="form-group">
-      <div class="actions">
-        <%= f.submit "登録する",class: "col-sm-offset-3 btn btn-primary" %>
+      <div class="form-group">
+        <div class="actions">
+          <%= f.submit "登録する",class: "col-sm-offset-3 btn btn-primary" %>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
-

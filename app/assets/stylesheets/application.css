@@ -16,6 +16,12 @@
 .mar_b_10 {
   margin-bottom: 10px;
 }
+.mar_b_20 {
+  margin-bottom: 20px;
+}
+.mar_b_50 {
+  margin-bottom: 50px;
+}
 .font-red {
   color: red;
 }
