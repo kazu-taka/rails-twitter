@@ -201,6 +201,7 @@ ja:
            profile: プロフィール
            password: パスワード
            password_confirmation: パスワード（確認）
+           current_password: 現在のパスワード
            email: メールアドレス
           tweet:
            content: 本文
