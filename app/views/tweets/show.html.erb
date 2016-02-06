@@ -30,12 +30,15 @@
     <tr>
       <td></td>
       <td width="100">
-        <%= image_tag(@tweet.user.image, width: 100) %>
+
+        <%= image_tag(user_image, width: 100) %>
       </td>
       <td>
         <%= form_for(@rep_tweet) do |f| %>
           <%= f.text_area :content, class: "form-control mar_b_5",
                            placeholder: "(本文は140文字以内で投稿)" %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.hidden_field :reply_tweet_id, value: @tweet.id %>
           <div class="actions">
             <%= f.submit "返信", class: "btn btn-default pull-right" %>
           </div>

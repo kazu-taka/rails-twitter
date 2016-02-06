@@ -1,6 +1,7 @@
 <%= form_for(@tweet) do |f| %>
   <%= f.text_area :content, class: "form-control mar_b_5",
                    placeholder: "(本文は140文字以内で投稿)" %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
   <div class="actions">
     <%= f.submit "投稿", class: "btn btn-default pull-right mar-t-5" %>
   </div>
@@ -23,7 +24,7 @@
         <td width="100"><%= image_tag(tweet.user.image, width: 100) %></td>
         <td><%= link_to tweet.user.name,tweet %>
             <span class="mar-l-10" >
-              (<%= tweet.created_at.strftime('%Y-%m-%d %H:%M:%S')%>)
+              <%= link_to "(#{tweet.created_at.strftime('%Y-%m-%d %H:%M:%S')})" %>
             </span><br>
             <%= tweet.content %><br>
             <%= link_to "返信",tweet %>

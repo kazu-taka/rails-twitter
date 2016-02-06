@@ -5,12 +5,10 @@ class TweetsController < ApplicationController
   def index
     @tweets = Tweet.page(params[:page])
     @tweet = Tweet.new
-
   end
 
   def create
     @tweet = Tweet.new(tweet_params)
-    @tweet.user_id = current_user.id
     respond_to do |format|
       if @tweet.save
         format.html { redirect_to @tweet, notice: 'Restaurant was successfully created.' }
@@ -25,7 +23,7 @@ class TweetsController < ApplicationController
 
   def show
     @tweets = Tweet.where(reply_tweet_id: @tweet.id)
-    @rep_tweet = Tweet.new
+    @rep_tweet = Tweet.new(reply_tweet_id: @tweet.id)
   end
 
   private
@@ -33,6 +31,6 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
   end
   def tweet_params
-    params.require(:tweet).permit(:content)
+    params.require(:tweet).permit(:content,:user_id,:reply_tweet_id)
   end
 end
