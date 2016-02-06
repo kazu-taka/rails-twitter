@@ -14,26 +14,41 @@
  *= require_self
  */
 body {
-    padding-top: 70px;
+  padding-top: 70px;
 }
-.mar_l_10 {
+
+/* margin */
+.mar-l-0 {
+  margin-left: 0px;
+}
+.mar-l-10 {
   margin-left: 10px;
 }
-.mar_t_50 {
+.mar-t-5 {
+  margin-top: 5px;
+}
+.mar-t-50 {
   margin-top: 50px;
 }
-.mar_b_5 {
+.mar-b-5 {
   margin-bottom: 5px;
 }
-.mar_b_10 {
+.mar-b-10 {
   margin-bottom: 10px;
 }
-.mar_b_20 {
+.mar-b-20 {
   margin-bottom: 20px;
 }
-.mar_b_50 {
+.mar-b-50 {
   margin-bottom: 50px;
 }
+
+/* padding */
+.pad-l-0 {
+  padding-left: 0px;
+}
+
+/* font */
 .font-red {
   color: red;
 }
@@ -46,7 +61,8 @@ body {
 .font-red ul {
   list-style-type: none;
 }
-.img_w_100 {
+
+.img-w-100 {
   width: 100px;
 }
 .text-center {

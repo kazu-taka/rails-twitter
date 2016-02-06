@@ -3,12 +3,12 @@
     <tr>
       <td width="100"><%= image_tag(@tweet.user.image, width: 100) %></td>
       <td colspan="2"><%= link_to @tweet.user.name,@tweet %>
-          <span class="mar_l_10" >
+          <span class="mar-l-10" >
             (<%= @tweet.created_at.strftime('%Y-%m-%d %H:%M:%S')%>)
           </span><br>
           <%= @tweet.content %><br>
           <%= link_to "返信",@tweet %>
-          <span class="mar_l_10" >お気に入り(<%= @tweet.favorites.count %>)
+          <span class="mar-l-10" >お気に入り(<%= @tweet.favorites.count %>)
           </span>
       </td>
     </tr>
@@ -17,12 +17,12 @@
         <td></td>
         <td width="100"><%= image_tag(tweet.user.image, width: 100) %></td>
         <td><%= link_to tweet.user.name,tweet %>
-            <span class="mar_l_10" >
+            <span class="mar-l-10" >
               (<%= tweet.created_at.strftime('%Y-%m-%d %H:%M:%S')%>)
             </span><br>
             <%= tweet.content %><br>
             <%= link_to "返信",tweet %>
-            <span class="mar_l_10" >お気に入り(<%= tweet.favorites.count %>)
+            <span class="mar-l-10" >お気に入り(<%= tweet.favorites.count %>)
             </span>
         </td>
       </tr>

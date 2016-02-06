@@ -2,31 +2,32 @@
   <%= f.text_area :content, class: "form-control mar_b_5",
                    placeholder: "(本文は140文字以内で投稿)" %>
   <div class="actions">
-    <%= f.submit "投稿", class: "btn btn-default pull-right" %>
+    <%= f.submit "投稿", class: "btn btn-default pull-right mar-t-5" %>
   </div>
   <% if @tweet.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@tweet.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
-      <ul>
-        <% @tweet.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+      <div class="font-red">
+        <ul class="pad-l-0">
+          <% @tweet.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 <% end %>
-<table class="table mar_t_50">
+<table class="table mar-t-50">
   <tbody>
     <% @tweets.each do |tweet| %>
       <tr>
         <td width="100"><%= image_tag(tweet.user.image, width: 100) %></td>
         <td><%= link_to tweet.user.name,tweet %>
-            <span class="mar_l_10" >
+            <span class="mar-l-10" >
               (<%= tweet.created_at.strftime('%Y-%m-%d %H:%M:%S')%>)
             </span><br>
             <%= tweet.content %><br>
             <%= link_to "返信",tweet %>
-            <span class="mar_l_10" >お気に入り(<%= tweet.favorites.count %>)
+            <span class="mar-l-10" >お気に入り(<%= tweet.favorites.count %>)
             </span>
         </td>
       </tr>

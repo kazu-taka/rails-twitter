@@ -1,10 +1,11 @@
 class TweetsController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:create]
   before_action :set_tweet, only: [:show]
 
   def index
     @tweets = Tweet.page(params[:page])
     @tweet = Tweet.new
+
   end
 
   def create
@@ -13,8 +14,9 @@ class TweetsController < ApplicationController
     respond_to do |format|
       if @tweet.save
         format.html { redirect_to @tweet, notice: 'Restaurant was successfully created.' }
-        format.json { render :index, status: :created, location: @tweet }
+        format.json { render :show, status: :created, location: @tweet }
       else
+        @tweets = Tweet.page(params[:page])
         format.html { render :index }
         format.json { render json: @tweet.errors, status: :unprocessable_entity }
       end
