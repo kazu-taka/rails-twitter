@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+50.times do |index|
+  Tweet.create(
+    user_id: 12,
+    content: "テストメッセージの#{index}番目１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０"
+  )
+end
+50.times do |index|
+  Tweet.create(
+    user_id: 13,
+    content: "テストメッセージの#{index}番目１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０"
+  )
+end

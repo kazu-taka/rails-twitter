@@ -1,0 +1,37 @@
+<%= form_for(@tweet) do |f| %>
+  <%= f.text_area :content, class: "form-control mar_b_5",
+                   placeholder: "(本文は140文字以内で投稿)" %>
+  <div class="actions">
+    <%= f.submit "投稿", class: "btn btn-default pull-right" %>
+  </div>
+  <% if @tweet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tweet.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
+      <ul>
+        <% @tweet.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
+<table class="table mar_t_50">
+  <tbody>
+    <% @tweets.each do |tweet| %>
+      <tr>
+        <td width="100"><%= image_tag(tweet.user.image, width: 100) %></td>
+        <td><%= link_to tweet.user.name,tweet %>
+            <span class="mar_l_10" >
+              (<%= tweet.created_at.strftime('%Y-%m-%d %H:%M:%S')%>)
+            </span><br>
+            <%= tweet.content %><br>
+            <%= link_to "返信",tweet %>
+            <span class="mar_l_10" >お気に入り(<%= tweet.favorites.count %>)
+            </span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @tweets %>
+

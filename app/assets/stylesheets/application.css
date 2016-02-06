@@ -13,6 +13,18 @@
  *= require_tree .
  *= require_self
  */
+body {
+    padding-top: 70px;
+}
+.mar_l_10 {
+  margin-left: 10px;
+}
+.mar_t_50 {
+  margin-top: 50px;
+}
+.mar_b_5 {
+  margin-bottom: 5px;
+}
 .mar_b_10 {
   margin-bottom: 10px;
 }
@@ -33,4 +45,10 @@
 }
 .font-red ul {
   list-style-type: none;
+}
+.img_w_100 {
+  width: 100px;
+}
+.text-center {
+  text-align: center;
 }
