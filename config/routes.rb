@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :tweets
   devise_for :users
-  get 'users/index'
+  get 'users/id' => 'users#show', as: :user
   root 'tweets#index'
 
   # devise_for :users

@@ -1,0 +1,34 @@
+<table class="table">
+  <tbody>
+    <tr>
+      <td width="150"><%= image_tag(@user.image, width: 150) %></td>
+      <td><%= @user.name %>
+        <span class="mar-l-10 font-red" >最終ログイン日：
+          <%= @user.last_sign_in_at.strftime('%Y-%m-%d %H:%M:%S')%>
+        </span><br>
+        プロフィール<br>
+        <%= @user.profile %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <tbody>
+    <% @tweets.each do |tweet| %>
+      <tr>
+        <td width="100"><%= image_tag(tweet.user.image, width: 100) %></td>
+        <td><%= link_to tweet.user.name,tweet %>
+            <span class="mar-l-10" >
+              (<%= tweet.created_at.strftime('%Y-%m-%d %H:%M:%S')%>)
+            </span><br>
+            <%= tweet.content %><br>
+            <%= link_to "返信",tweet %>
+            <span class="mar-l-10" >お気に入り(<%= tweet.favorites.count %>)
+            </span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @tweets %>

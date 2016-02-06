@@ -49,7 +49,7 @@
 
       <div class="actions">
         <%= f.submit "設定変更する",class: "col-sm-offset-3 btn btn-primary" %>
-        <input type="button" value="戻る" onclick="history.back()" class="btn btn-default">
+        <%= link_to "戻る" ,tweets_path, class: "btn btn-default" %>
       </div>
     <% end %>
   </div>
