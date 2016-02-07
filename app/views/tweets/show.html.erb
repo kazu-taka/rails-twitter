@@ -30,7 +30,6 @@
     <tr>
       <td></td>
       <td width="100">
-
         <%= image_tag(user_image, width: 100) %>
       </td>
       <td>
@@ -40,7 +39,7 @@
           <%= f.hidden_field :user_id, value: current_user.id %>
           <%= f.hidden_field :reply_tweet_id, value: @tweet.id %>
           <div class="actions">
-            <%= f.submit "返信", class: "btn btn-default pull-right" %>
+            <%= f.submit "返信", class: "btn btn-default pull-right mar-t-5" %>
           </div>
           <% if @rep_tweet.errors.any? %>
             <div id="error_explanation">

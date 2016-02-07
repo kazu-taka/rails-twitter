@@ -7,4 +7,5 @@ class Tweet < ActiveRecord::Base
   validates :content, length:
              { in: 2..140,
                message: "は2文字以上140文字以内で入力してください。" }
+
 end
